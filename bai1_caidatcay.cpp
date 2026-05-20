@@ -114,3 +114,33 @@ void duyetSau(Node* root) {
         cout << root->data << " ";
     }
 }
+void truoc(Node* root) {
+    if(root != NULL) {
+        cout << root->data;
+        truoc(root->left);
+        truoc(root->right);
+    }
+}
+void giua(Node* root) {
+    if(root != NULL) {
+
+        if(root->left != NULL)
+            cout << "(";
+
+        giua(root->left);
+
+        cout << root->data;
+
+        giua(root->right);
+
+        if(root->right != NULL)
+            cout << ")";
+    }
+}
+void sau(Node* root) {
+    if(root != NULL) {
+        sau(root->left);
+        sau(root->right);
+        cout << root->data;
+    }
+}
