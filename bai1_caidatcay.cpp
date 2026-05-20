@@ -46,3 +46,15 @@ Node* cayLechTrai() {
 
     return A;
 }
+Node* cayLechPhai() {
+    Node* A = taoNode('A');
+    Node* B = taoNode('B');
+    Node* C = taoNode('C');
+    Node* D = taoNode('D');
+
+    A->right = B;
+    B->right = C;
+    C->right = D;
+
+    return A;
+}
