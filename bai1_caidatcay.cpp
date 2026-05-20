@@ -70,3 +70,26 @@ Node* cayZigZag() {
 
     return A;
 }
+Node* cayBieuThuc() {
+    Node* chia = taoNode('/');
+
+    Node* cong = taoNode('+');
+    Node* d = taoNode('d');
+
+    Node* nhan = taoNode('*');
+    Node* c = taoNode('c');
+
+    Node* a = taoNode('a');
+    Node* b = taoNode('b');
+
+    chia->left = cong;
+    chia->right = d;
+
+    cong->left = nhan;
+    cong->right = c;
+
+    nhan->left = a;
+    nhan->right = b;
+
+    return chia;
+}
