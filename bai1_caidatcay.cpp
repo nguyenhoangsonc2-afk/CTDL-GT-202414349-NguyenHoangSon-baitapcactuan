@@ -33,4 +33,16 @@ Node* cayDayDu() {
     C->right = G;
 
     return A;
+} 
+Node* cayLechTrai() {
+    Node* A = taoNode('A');
+    Node* B = taoNode('B');
+    Node* C = taoNode('C');
+    Node* D = taoNode('D');
+
+    A->left = B;
+    B->left = C;
+    C->left = D;
+
+    return A;
 }
