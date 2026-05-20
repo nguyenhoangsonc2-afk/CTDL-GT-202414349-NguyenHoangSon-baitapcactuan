@@ -14,3 +14,23 @@ Node* taoNode(char x) {
     p->right = NULL;
     return p;
 }
+Node* cayDayDu() {
+    Node* A = taoNode('A');
+    Node* B = taoNode('B');
+    Node* C = taoNode('C');
+    Node* D = taoNode('D');
+    Node* E = taoNode('E');
+    Node* F = taoNode('F');
+    Node* G = taoNode('G');
+
+    A->left = B;
+    A->right = C;
+
+    B->left = D;
+    B->right = E;
+
+    C->left = F;
+    C->right = G;
+
+    return A;
+}
