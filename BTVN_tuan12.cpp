@@ -45,3 +45,30 @@ void Sapxep(int arr[], int n) {
     buoc++;
 }
 }
+int main() {
+    int arrslide[] = {4, 1, 3, 2, 16, 9, 10, 14, 8 , 7}; 
+    int n= sizeof(arrslide) / sizeof(arrslide[0]);    
+cout << "mang ban dau:";
+Print(arrslide, n);    
+cout << "\nCac trang thai luu tru : \n";
+Taodong(arrslide, n);     
+cout << "\nCac trang thai luu tru cho moi buoc sap xep vun dong: \n";
+Sapxep(arrslide, n);
+    Print(arrslide, n);
+
+
+int arrbang[] = {11, 34, 32, 106, 38, 78, 203, 16, 84, 17, 39 , 15};   // Nhap 
+int a= sizeof(arrbang) / sizeof(arrbang[0]);
+
+cout << "Xet mang trong slide, mang ban dau:";
+Print(arrbang, a);    // in
+cout << "\nCac trang thai luu tru cho moi buoc vun dong: \n";
+Taodong(arrbang, a);     
+cout << "\nCac trang thai luu tru cho moi buoc sap xep vun dong: \n";
+Sapxep(arrbang, a);// sap xep
+
+cout << "\nCay sau khi sap xep:";
+Print(arrbang, a);
+
+    return 0;
+}  
