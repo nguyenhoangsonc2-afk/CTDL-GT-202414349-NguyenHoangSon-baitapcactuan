@@ -34,3 +34,14 @@ for (int i = n / 2 - 1; i >= 0; i--) {
     Print(arr, n); 
     }
 }
+void Sapxep(int arr[], int n) {   
+    int buoc = 1;           
+    for (int i = n - 1; i > 0; i--) {   
+    int b = arr[0];
+    arr[0] = arr[i];   
+
+    Vundong(arr, i, 0); 
+    Print(arr, n);
+    buoc++;
+}
+}
