@@ -27,3 +27,10 @@ if (conphai < n && arr[conphai] > arr[Nutcha])
     }
 
 }
+void Taodong(int arr[], int n) {   
+for (int i = n / 2 - 1; i >= 0; i--) {   
+    Vundong(arr, n, i);  
+    cout << "Vun dong o nut i = " << i+1 << ":";
+    Print(arr, n); 
+    }
+}
