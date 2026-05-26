@@ -1,4 +1,4 @@
-### TUẦN 11
+### TUẦN 9
 ## I. Bài cơ bản( quản lý dssv)  
 **Các Test case:**  
 * DS sinh viên rỗng, in ra rỗng.   
