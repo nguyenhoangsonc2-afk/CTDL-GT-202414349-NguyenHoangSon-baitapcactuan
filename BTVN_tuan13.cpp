@@ -15,3 +15,8 @@ void add_nodeBST(int tree[], int max, int a) {    // Hàm thêm node vào cây
         else return;
     }
 }
+void initial_BST(int arr[], int n, int tree[], int max) {    // Hàm dựng cây  
+    for (int i = 0; i < n; i++) {
+        add_nodeBST(tree, max, arr[i]);    
+    }   
+ }
