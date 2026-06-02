@@ -20,3 +20,20 @@ void initial_BST(int arr[], int n, int tree[], int max) {    // Hàm dựng c�
         add_nodeBST(tree, max, arr[i]);    
     }   
  }
+ void search_BST(int tree[], int max, int find) {    // Hàm tìm kiếm 
+    int i = 0; 
+    while (i < max) {      
+
+    if (tree[i] == 0) {  cout << "Khong thay " << find << " trong cay" <<  endl;   
+            return; }
+    if (tree[i] == find) { cout << "Tim thay " << find << " tai vi tri: " << i << endl;  
+            return;   }
+
+
+    if (find <= tree[i]) {  
+        i = 2 * i + 1;  }
+    else { i = 2 * i + 2; }  //sang trái
+}
+    cout << "Khong tim thay gia tri " << find << " trong cay tim kiem nhi phan" <<  endl;   
+}
+
