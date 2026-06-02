@@ -55,7 +55,7 @@ int main() {
     initial_BST(arr, n, tree, max);
     Print_BST(tree, max);
 
-    add_nodeBST(tree, max, 1233);       
+    add_nodeBST(tree, max, 1213);       
     Print_BST(tree, max);
 
     search_BST(tree, max, 2006); 
