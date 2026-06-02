@@ -37,3 +37,12 @@ void initial_BST(int arr[], int n, int tree[], int max) {    // Hàm dựng c�
     cout << "Khong tim thay gia tri " << find << " trong cay tim kiem nhi phan" <<  endl;   
 }
 
+
+void Print_BST(int tree[], int max) {      // Hàm in 
+    int p = -1;
+    for (int i = max - 1; i >= 0; i--) {     
+        if (tree[i] != 0) { p = i;   break;  }  } // Tìm phần tử khác rỗng cuối cùng 
+
+    for (int i = 0; i <= p; i++) {   cout << tree[i] << " "; }       // In cây
+    cout << endl;
+}
