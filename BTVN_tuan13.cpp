@@ -46,3 +46,20 @@ void Print_BST(int tree[], int max) {      // Hàm in
     for (int i = 0; i <= p; i++) {   cout << tree[i] << " "; }       // In cây
     cout << endl;
 }
+int main() {
+    int arr[] = {2001,2002,2006,2007,2003,2004,2005,2001,1999,2004};
+    int n = sizeof(arr) / sizeof(arr[0]);    
+    int max = pow(2,n)-1;    
+    int tree[max] = {0};
+
+    initial_BST(arr, n, tree, max);
+    Print_BST(tree, max);
+
+    add_nodeBST(tree, max, 1223);       
+    Print_BST(tree, max);
+
+    search_BST(tree, max, 2006); 
+    search_BST(tree, max, 10);
+
+    return 0;
+}
