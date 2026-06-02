@@ -58,7 +58,7 @@ int main() {
     add_nodeBST(tree, max, 1213);       
     Print_BST(tree, max);
 
-    search_BST(tree, max, 2006); 
+    search_BST(tree, max, 2004); 
     search_BST(tree, max, 10);
 
     return 0;
