@@ -10,7 +10,8 @@ void add_nodeBST(int tree[], int max, int a) {    // Hàm thêm node vào cây
         if (tree[i] == 0)  // Thêm giá trị vào node rỗng
         { tree[i] = a;
             return;  }
-             if (a <= tree[i])  i = 2 * i + 1;       
+              if (a <= tree[i])  i = 2 * i + 1;        
         else if (a > tree[i]) i = 2 * i + 2;    
+        else return;
     }
 }
