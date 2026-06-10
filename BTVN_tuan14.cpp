@@ -67,4 +67,33 @@ void xoayKepTraiPhai(NodeAVL *&nutGoc) {
 void xoayKepPhaiTrai(NodeAVL *&nutGoc) {
     xoayPhai(nutGoc->conPhai);
     xoayTrai(nutGoc);
-}
+}// Chèn một phần tử vào cây AVL
+void chenAVL(int giaTriMoi, NodeAVL *&goc) {
+    if (goc == NULL) {
+        goc = new NodeAVL(giaTriMoi);
+        return;
+    }
+
+    if (giaTriMoi < goc->giaTri) {
+        chenAVL(giaTriMoi, goc->conTrai);
+
+        if (doLech(goc) == 2) {
+            if (giaTriMoi < goc->conTrai->giaTri)
+                xoayPhai(goc);
+            else
+                xoayKepTraiPhai(goc);
+        }
+    }
+    else if (giaTriMoi > goc->giaTri) {
+        chenAVL(giaTriMoi, goc->conPhai);
+
+        if (doLech(goc) == -2) {
+            if (giaTriMoi > goc->conPhai->giaTri)
+                xoayTrai(goc);
+            else
+                xoayKepPhaiTrai(goc);
+        }
+    }
+    else {
+        return; // Không chèn phần tử trùng
+    }
