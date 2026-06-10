@@ -116,3 +116,11 @@ void duyetGiua(NodeAVL *goc) {
         duyetGiua(goc->conPhai);
     }
 }
+// Duyệt sau LRN
+void duyetSau(NodeAVL *goc) {
+    if (goc != NULL) {
+        duyetSau(goc->conTrai);
+        duyetSau(goc->conPhai);
+        cout << goc->giaTri << " ";
+    }
+}
