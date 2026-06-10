@@ -124,3 +124,25 @@ void duyetSau(NodeAVL *goc) {
         cout << goc->giaTri << " ";
     }
 }
+int main() {
+    NodeAVL *goc = NULL;
+
+    int daySo[] = {32, 51, 27, 83, 96, 11, 45, 75, 66};
+    int soLuong = sizeof(daySo) / sizeof(daySo[0]);
+
+    for (int i = 0; i < soLuong; i++) {
+        chenAVL(daySo[i], goc);
+    }
+
+    cout << "Duyet truoc (NLR): ";
+    duyetTruoc(goc);
+
+    cout << "\nDuyet giua (LNR): ";
+    duyetGiua(goc);
+
+    cout << "\nDuyet sau (LRN): ";
+    duyetSau(goc);
+
+    cout << endl;
+    return 0;
+}
