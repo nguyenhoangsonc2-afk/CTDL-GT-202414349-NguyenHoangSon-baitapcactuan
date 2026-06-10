@@ -1,3 +1,15 @@
+### TUẦN 13
+
+## ĐỀ BÀI: 
+* Cài đặt cây NP tìm kiếm của bài toán dưới đây , tính độ phức tạp thuật toán của thuật toán tìm kiếm trên cây NP tìm kiếm.
+## Độ phức tạp: Độ phức tạp tìm kiếm trên Cây nhị phân tìm kiếm (BST) không cố định mà phụ thuộc hoàn toàn vào hình dạng (chiều cao) của cây:
+*Trường hợp trung bình / tốt nhất:*
+ $O(\log_2 n)$, Điều kiện: Cây phân bố đều, cân bằng ở cả 2 nhánh trái và phải. Chiều cao cây lúc này đạt mức tối thiểu là $\approx \log_2 n$.
+ 
+*Trường hợp xấu nhất:*
+ $O(n)$, Điều kiện: Khi mảng dữ liệu đầu vào có thứ tự (tăng dần hoặc giảm dần), cây dựng lên sẽ bị suy biến lệch hoàn toàn về một phía (như một danh sách liên kết). Chiều cao cây lúc này bằng chính số phần tử $n$.
+
+
 ### TUẦN 9
 ## I. Bài cơ bản( quản lý dssv)  
 **Các Test case:**  
