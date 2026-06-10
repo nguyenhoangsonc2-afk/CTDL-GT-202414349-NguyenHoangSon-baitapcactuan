@@ -28,3 +28,18 @@ int doLech(NodeAVL *nut) {
         return 0;
     return layChieuCao(nut->conTrai) - layChieuCao(nut->conPhai);
 }
+// Xoay phải (trường hợp LL)
+void xoayPhai(NodeAVL *&nutMatCanBang) {
+    NodeAVL *nutConTrai = nutMatCanBang->conTrai;
+
+    nutMatCanBang->conTrai = nutConTrai->conPhai;
+    nutConTrai->conPhai = nutMatCanBang;
+
+    nutMatCanBang->chieuCao = timMax(layChieuCao(nutMatCanBang->conTrai),
+                                     layChieuCao(nutMatCanBang->conPhai)) + 1;
+
+    nutConTrai->chieuCao = timMax(layChieuCao(nutConTrai->conTrai),
+                                   layChieuCao(nutConTrai->conPhai)) + 1;
+
+    nutMatCanBang = nutConTrai;
+}
