@@ -108,3 +108,11 @@ void duyetTruoc(NodeAVL *goc) {
         duyetTruoc(goc->conPhai);
     }
 }
+// Duyệt giữa LNR
+void duyetGiua(NodeAVL *goc) {
+    if (goc != NULL) {
+        duyetGiua(goc->conTrai);
+        cout << goc->giaTri << " ";
+        duyetGiua(goc->conPhai);
+    }
+}
