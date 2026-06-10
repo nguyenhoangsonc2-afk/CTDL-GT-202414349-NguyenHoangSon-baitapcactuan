@@ -1,3 +1,17 @@
+### TUẦN 14
+## ĐỀ BÀI :
+Cài đặt cây cân bằng AVL với đầu vào là dãy số sau , thực hiện các thêm và duyệt cây để in ra giá trị của các phần tử trên cây :
+32, 51, 27, 83, 96, 11, 45, 75, 66.
+1. Hàm tính độ lệch: doLech(goc)Lấy chiều cao nhánh trái trừ đi chiều cao nhánh phải.Nếu kết quả trả về bằng 2 $\rightarrow$ Cây đang bị lệch trái.Nếu kết quả trả về bằng -2 $\rightarrow$ Cây đang bị lệch phải.
+2. Các hàm xoay để cân bằng cây: Khi có hiện tượng mất cân bằng, giải thuật chia làm 4 trường hợp xử lý dựa trên vị trí của phần tử mới chèn:
+* Xoay đơn phải (xoayPhai - Trường hợp LL): Xảy ra khi nhánh trái lệch và phần tử mới lại nằm bên trái của con trái. Nút con trái sẽ được kéo lên làm gốc mới thay thế nút hiện tại.
+* Xoay đơn trái (xoayTrai - Trường hợp RR): Xảy ra khi nhánh phải lệch và phần tử mới nằm bên phải của con phải. Nút con phải được kéo lên làm gốc mới.
+* Xoay kép Trái - Phải (xoayKepTraiPhai - Trường hợp LR): Xảy ra khi nhánh trái lệch nhưng phần tử mới lại nằm bên phải của con trái. Giải thuật tiến hành xoayTrai ở nút con trước, biến nó thành trường hợp LL, sau đó xoayPhai ở nút gốc.
+* Xoay kép Phải - Trái (xoayKepPhaiTrai - Trường hợp RL): Xảy ra khi nhánh phải lệch nhưng phần tử mới nằm bên trái của con phải. Giải thuật tiến hành xoayPhai ở nút con trước, đưa về trường hợp RR, rồi mới xoayTrai ở nút gốc.
+3. Thêm, duyệt cây.
+4. In cây.
+
+  
 ### TUẦN 13
 
 ## ĐỀ BÀI: 
@@ -9,6 +23,12 @@
 *Trường hợp xấu nhất:*
  $O(n)$, Điều kiện: Khi mảng dữ liệu đầu vào có thứ tự (tăng dần hoặc giảm dần), cây dựng lên sẽ bị suy biến lệch hoàn toàn về một phía (như một danh sách liên kết). Chiều cao cây lúc này bằng chính số phần tử $n$.
 
+### TUẦN 12:
+## ĐỀ BÀI: Cài đặt giải thuật sắp xếp vun đống cho các cây ví dụ trong slide và trên bảng, in ra từng trạng thái lưu trữ cho mỗi bước vun đống và sắp xếp.
+### TUẦN 11: 
+## ĐỀ BÀI: 
+* Cài đặt cây đầy đủ, cây lệch trái, cây lệch phải, cây zigzac cho trên bảng theo 2 cấu trúc lưu trữ: tuần tự và móc nối.
+* Cài đặt cây biểu thức và in biểu thức theo thứ tự duyệt trước, sau, giữa.
 
 ### TUẦN 9
 ## I. Bài cơ bản( quản lý dssv)  
