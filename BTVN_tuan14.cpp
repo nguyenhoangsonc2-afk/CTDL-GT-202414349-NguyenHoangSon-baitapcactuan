@@ -43,3 +43,18 @@ void xoayPhai(NodeAVL *&nutMatCanBang) {
 
     nutMatCanBang = nutConTrai;
 }
+// Xoay trái (trường hợp RR)
+void xoayTrai(NodeAVL *&nutMatCanBang) {
+    NodeAVL *nutConPhai = nutMatCanBang->conPhai;
+
+    nutMatCanBang->conPhai = nutConPhai->conTrai;
+    nutConPhai->conTrai = nutMatCanBang;
+
+    nutMatCanBang->chieuCao = timMax(layChieuCao(nutMatCanBang->conTrai),
+                                     layChieuCao(nutMatCanBang->conPhai)) + 1;
+
+    nutConPhai->chieuCao = timMax(layChieuCao(nutConPhai->conTrai),
+                                   layChieuCao(nutConPhai->conPhai)) + 1;
+
+    nutMatCanBang = nutConPhai;
+}
