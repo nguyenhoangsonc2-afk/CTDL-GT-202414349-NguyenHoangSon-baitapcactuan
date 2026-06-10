@@ -63,3 +63,8 @@ void xoayKepTraiPhai(NodeAVL *&nutGoc) {
     xoayTrai(nutGoc->conTrai);
     xoayPhai(nutGoc);
 }
+// Xoay kép phải trái (RL)
+void xoayKepPhaiTrai(NodeAVL *&nutGoc) {
+    xoayPhai(nutGoc->conPhai);
+    xoayTrai(nutGoc);
+}
