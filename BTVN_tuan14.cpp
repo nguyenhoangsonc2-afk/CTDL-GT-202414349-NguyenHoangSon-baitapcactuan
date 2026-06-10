@@ -97,3 +97,7 @@ void chenAVL(int giaTriMoi, NodeAVL *&goc) {
     else {
         return; // Không chèn phần tử trùng
     }
+    // Cập nhật lại chiều cao nút cha sau khi chèn/xoay xong
+    goc->chieuCao = timMax(layChieuCao(goc->conTrai),
+                           layChieuCao(goc->conPhai)) + 1;
+}
