@@ -100,4 +100,11 @@ void chenAVL(int giaTriMoi, NodeAVL *&goc) {
     // Cập nhật lại chiều cao nút cha sau khi chèn/xoay xong
     goc->chieuCao = timMax(layChieuCao(goc->conTrai),
                            layChieuCao(goc->conPhai)) + 1;
+}// Duyệt trước NLR
+void duyetTruoc(NodeAVL *goc) {
+    if (goc != NULL) {
+        cout << goc->giaTri << " ";
+        duyetTruoc(goc->conTrai);
+        duyetTruoc(goc->conPhai);
+    }
 }
