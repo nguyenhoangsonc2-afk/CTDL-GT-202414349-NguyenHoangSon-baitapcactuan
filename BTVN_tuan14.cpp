@@ -18,3 +18,7 @@ struct NodeAVL {
 int layChieuCao(NodeAVL *nut) {
     return (nut == NULL) ? -1 : nut->chieuCao;
 }
+// Tìm số lớn hơn
+int timMax(int a, int b) {
+    return (a > b) ? a : b;
+}
