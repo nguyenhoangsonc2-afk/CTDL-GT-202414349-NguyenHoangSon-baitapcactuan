@@ -58,3 +58,8 @@ void xoayTrai(NodeAVL *&nutMatCanBang) {
 
     nutMatCanBang = nutConPhai;
 }
+// Xoay kép trái phải (LR)
+void xoayKepTraiPhai(NodeAVL *&nutGoc) {
+    xoayTrai(nutGoc->conTrai);
+    xoayPhai(nutGoc);
+}
