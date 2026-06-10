@@ -22,3 +22,9 @@ int layChieuCao(NodeAVL *nut) {
 int timMax(int a, int b) {
     return (a > b) ? a : b;
 }
+// Tính độ lệch cân bằng
+int doLech(NodeAVL *nut) {
+    if (nut == NULL)
+        return 0;
+    return layChieuCao(nut->conTrai) - layChieuCao(nut->conPhai);
+}
