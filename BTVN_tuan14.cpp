@@ -36,11 +36,10 @@ void xoayPhai(NodeAVL *&nutMatCanBang) {
     nutConTrai->conPhai = nutMatCanBang;
 
     nutMatCanBang->chieuCao = timMax(layChieuCao(nutMatCanBang->conTrai),
-                                     layChieuCao(nutMatCanBang->conPhai)) + 1;
+ layChieuCao(nutMatCanBang->conPhai)) + 1;
 
     nutConTrai->chieuCao = timMax(layChieuCao(nutConTrai->conTrai),
-                                   layChieuCao(nutConTrai->conPhai)) + 1;
-
+  layChieuCao(nutConTrai->conPhai)) + 1;
     nutMatCanBang = nutConTrai;
 }
 // Xoay trái (trường hợp RR)
@@ -51,11 +50,10 @@ void xoayTrai(NodeAVL *&nutMatCanBang) {
     nutConPhai->conTrai = nutMatCanBang;
 
     nutMatCanBang->chieuCao = timMax(layChieuCao(nutMatCanBang->conTrai),
-                                     layChieuCao(nutMatCanBang->conPhai)) + 1;
+  layChieuCao(nutMatCanBang->conPhai)) + 1;
 
     nutConPhai->chieuCao = timMax(layChieuCao(nutConPhai->conTrai),
-                                   layChieuCao(nutConPhai->conPhai)) + 1;
-
+     layChieuCao(nutConPhai->conPhai)) + 1;
     nutMatCanBang = nutConPhai;
 }
 // Xoay kép trái phải (LR)
@@ -100,7 +98,7 @@ void chenAVL(int giaTriMoi, NodeAVL *&goc) {
     // Cập nhật lại chiều cao nút cha sau khi chèn/xoay xong
     goc->chieuCao = timMax(layChieuCao(goc->conTrai),
                            layChieuCao(goc->conPhai)) + 1;
-}// Duyệt trước NLR
+}// Duyệt trước 
 void duyetTruoc(NodeAVL *goc) {
     if (goc != NULL) {
         cout << goc->giaTri << " ";
@@ -108,7 +106,7 @@ void duyetTruoc(NodeAVL *goc) {
         duyetTruoc(goc->conPhai);
     }
 }
-// Duyệt giữa LNR
+// Duyệt giữa 
 void duyetGiua(NodeAVL *goc) {
     if (goc != NULL) {
         duyetGiua(goc->conTrai);
@@ -116,14 +114,15 @@ void duyetGiua(NodeAVL *goc) {
         duyetGiua(goc->conPhai);
     }
 }
-// Duyệt sau LRN
+// Duyệt sau
 void duyetSau(NodeAVL *goc) {
     if (goc != NULL) {
         duyetSau(goc->conTrai);
         duyetSau(goc->conPhai);
         cout << goc->giaTri << " ";
     }
-}
+} 
+// chay
 int main() {
     NodeAVL *goc = NULL;
 
@@ -134,13 +133,13 @@ int main() {
         chenAVL(daySo[i], goc);
     }
 
-    cout << "Duyet truoc (NLR): ";
+    cout << "Duyet truoc: ";
     duyetTruoc(goc);
 
-    cout << "\nDuyet giua (LNR): ";
+    cout << "\nDuyet giua: ";
     duyetGiua(goc);
 
-    cout << "\nDuyet sau (LRN): ";
+    cout << "\nDuyet sau: ";
     duyetSau(goc);
 
     cout << endl;
