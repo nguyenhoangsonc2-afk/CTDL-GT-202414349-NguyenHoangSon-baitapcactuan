@@ -14,3 +14,7 @@ struct NodeAVL {
         chieuCao = 0; 
     }
 };
+// Lấy chiều cao của nút (nếu NULL thì trả về -1)
+int layChieuCao(NodeAVL *nut) {
+    return (nut == NULL) ? -1 : nut->chieuCao;
+}
