@@ -22,6 +22,7 @@ void themCanh(int u, int v)
     a[u][v] = 1;
     a[v][u] = 1;
 }
+// duyet theo chieu sau
 void BFS(int start)
 {
     bool visited[N] = {false};
@@ -49,8 +50,10 @@ void BFS(int start)
     int main()
 {
     themCanh(0,1);
+
     themCanh(0,2);
     themCanh(2,3);
+
     themCanh(3,4);
     themCanh(2,4);
     themCanh(4,5);
@@ -62,7 +65,7 @@ void BFS(int start)
     themCanh(0,9);
     themCanh(0,10);
 
-    cout << "BFS tu Ha Noi:\n";
+    cout << "BFS bat dau tu Ha Noi:\n";
     BFS(0);
 
     return 0;
