@@ -22,3 +22,27 @@ void themCanh(int u, int v)
     a[u][v] = 1;
     a[v][u] = 1;
 }
+void BFS(int start)
+{
+    bool visited[N] = {false};
+    queue<int> q;
+
+    visited[start] = true;
+    q.push(start);
+
+    while(!q.empty())
+    {
+        int u = q.front();
+        q.pop();
+
+        cout << tenTP[u] << " ";
+
+        for(int v = 0; v < N; v++)
+        {
+            if(a[u][v] && !visited[v])
+            {
+                visited[v] = true;
+                q.push(v);
+            }
+        }
+    }
