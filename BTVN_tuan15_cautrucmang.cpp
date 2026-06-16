@@ -15,3 +15,10 @@ string tenTP[N] = {
     "Hoa Binh",
     "Son Tay"
 };
+int a[N][N] = {0};
+
+void themCanh(int u, int v)
+{
+    a[u][v] = 1;
+    a[v][u] = 1;
+}
