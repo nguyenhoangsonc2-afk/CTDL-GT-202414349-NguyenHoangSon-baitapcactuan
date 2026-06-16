@@ -1,3 +1,10 @@
+### TUẦN 15
+## ĐỀ BÀI :
+Cài đặt bài đồ thị giao thông, theo 2 cấu trúc lưu trữ mảng đỉnh kề và danh sách liên két, duyệt theo chiều rộng (BFS) và in theo thứ tự duyệt từ đỉnh Hà nội.
+* Cài đặt thuật toán duyệt đồ thị theo chiều rộng dựa trên sơ đồ mạng lưới giao thông gồm 11 đỉnh (tương ứng với 11 tỉnh/thành phố phía Bắc) bằng hai cấu trúc lưu trữ dữ liệu khác nhau: Ma trận kề và Danh sách liên kết.
+* 1. Ý Tưởng: Đỉnh nào có khoảng cách (số cạnh) gần đỉnh gốc hơn sẽ được ưu tiên thăm trước. Để kiểm soát thứ tự duyệt, thuật toán sử dụng cấu trúc dữ liệu Hàng đợi (Queue).
+* 2. Cài Đặt Bằng Ma Trận Kề (Mảng 2 Chiều), sử dụng một mảng hai chiều cố định int a[11][11] khởi tạo toàn bộ bằng 0. Khi có đường đi giữa u và v, ta gán a[u][v] = a[v][u]=1.
+* 3. Cài Đặt Bằng Danh Sách Liên Kết: Định nghĩa một cấu trúc struct Node tự liên kết bằng con trỏ để lưu trữ thông tin đỉnh đích và con trỏ trỏ tới node tiếp theo (next). Sử dụng mảng quản lý head[11] và tail[11].
 ### TUẦN 14
 ## ĐỀ BÀI :
 Cài đặt cây cân bằng AVL với đầu vào là dãy số sau , thực hiện các thêm và duyệt cây để in ra giá trị của các phần tử trên cây :
