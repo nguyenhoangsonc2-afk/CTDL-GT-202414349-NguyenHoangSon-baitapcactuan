@@ -33,3 +33,28 @@ void themCanh(int u, int v) {
     chenVaoCuoi(u, v);
     chenVaoCuoi(v, u);
 }
+// duyet theo chieu rong
+void BFS(int start) {
+    bool visited[N] = {false};
+    queue<int> q;
+
+    visited[start] = true;
+    q.push(start);
+
+    while(!q.empty()) {
+        int u = q.front();
+        q.pop();
+
+        cout << tenTP[u] << " -> ";
+        Node* temp = head[u];
+        while (temp != nullptr) {
+            int v = temp->dest;
+            if (!visited[v]) {
+                visited[v] = true;
+                q.push(v);
+            }
+            temp = temp->next;
+        }
+    }
+    cout << "END\n";
+}
