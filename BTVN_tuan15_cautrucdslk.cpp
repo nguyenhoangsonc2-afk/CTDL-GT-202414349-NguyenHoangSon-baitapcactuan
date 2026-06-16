@@ -12,3 +12,20 @@ struct Node {
     int dest;
     Node* next;
 };
+Node* head[N] = {nullptr};
+Node* tail[N] = {nullptr};
+
+// chen mot dinh vao cuoi dslk dinh khac
+void chenVaoCuoi(int u, int v) {
+    Node* newNode = new Node;
+    newNode->dest = v;
+    newNode->next = nullptr;
+
+    if (head[u] == nullptr) {
+        head[u] = newNode;
+        tail[u] = newNode;
+    } else {
+        tail[u]->next = newNode;
+        tail[u] = newNode;
+    }
+}
