@@ -45,4 +45,25 @@ void BFS(int start)
                 q.push(v);
             }
         }
-    }
+    }}
+    int main()
+{
+    themCanh(0,1);
+    themCanh(0,2);
+    themCanh(2,3);
+    themCanh(3,4);
+    themCanh(2,4);
+    themCanh(4,5);
+    themCanh(0,6);
+    themCanh(6,5);
+    themCanh(6,7);
+    themCanh(7,8);
+    themCanh(0,8);
+    themCanh(0,9);
+    themCanh(0,10);
+
+    cout << "BFS tu Ha Noi:\n";
+    BFS(0);
+
+    return 0;
+}
