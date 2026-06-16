@@ -29,3 +29,7 @@ void chenVaoCuoi(int u, int v) {
         tail[u] = newNode;
     }
 }
+void themCanh(int u, int v) {
+    chenVaoCuoi(u, v);
+    chenVaoCuoi(v, u);
+}
