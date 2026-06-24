@@ -40,3 +40,23 @@ void noiTuyenDuong(Graph &soDo, int tinhA, int tinhB, int khoangCach)
     soDo.matrix[tinhA][tinhB] = khoangCach;
     soDo.matrix[tinhB][tinhA] = khoangCach;
 }
+// Ham hien thi
+void hienThiBang(int bangSo[MAX_NODES][MAX_NODES], int kichThuoc)
+{
+    cout << setw(15) << "";
+
+    for(int i = 0; i < kichThuoc; i++)
+        cout << setw(12) << danhSachTinh[i];
+
+    cout << endl;
+
+    for(int i = 0; i < kichThuoc; i++)
+    {
+        cout << setw(15) << danhSachTinh[i];
+
+        for(int j = 0; j < kichThuoc; j++)
+            cout << setw(12) << bangSo[i][j];
+
+        cout << endl;
+    }
+}
