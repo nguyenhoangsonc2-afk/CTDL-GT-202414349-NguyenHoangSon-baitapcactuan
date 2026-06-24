@@ -93,3 +93,44 @@ void chayWarshall(Graph soDo, int ketQuaLienThong[MAX_NODES][MAX_NODES])
         }
     }
 }
+// Thuật toán Dijkstra tìm đường đi tối ưu bằng hàng đợi ưu tiên
+void chayDijkstra(Graph soDo, int diemDau, int tuyenNganNhat[MAX_NODES], int vetDuongDi[MAX_NODES])
+{
+    int total = soDo.totalNodes;
+
+    // Hàng đợi ưu tiên tự động sắp xếp các chặng ngắn nhất lên đầu
+    priority_queue<NodePair, vector<NodePair>, greater<NodePair>> hangDoiUuTien;
+
+    for(int i = 0; i < total; i++)
+    {
+        tuyenNganNhat[i] = INF;
+        vetDuongDi[i] = -1;
+    }
+
+    tuyenNganNhat[diemDau] = 0;
+    hangDoiUuTien.push({0, diemDau}); 
+
+    while(!hangDoiUuTien.empty())
+    {
+        int dinhHienTai = hangDoiUuTien.top().second;
+        int chiPhiHienTai = hangDoiUuTien.top().first;
+        hangDoiUuTien.pop();
+
+        if(chiPhiHienTai > tuyenNganNhat[dinhHienTai])
+            continue;
+
+        for(int dinhKe = 0; dinhKe < total; dinhKe++)
+        {
+            if(soDo.matrix[dinhHienTai][dinhKe] != 0) 
+            {
+                int chiPhiMoi = tuyenNganNhat[dinhHienTai] + soDo.matrix[dinhHienTai][dinhKe];
+                if(chiPhiMoi < tuyenNganNhat[dinhKe])
+                {
+                    tuyenNganNhat[dinhKe] = chiPhiMoi;
+                    vetDuongDi[dinhKe] = dinhHienTai;
+                    hangDoiUuTien.push({chiPhiMoi, dinhKe}); 
+                }
+            }
+        }
+    }
+}
