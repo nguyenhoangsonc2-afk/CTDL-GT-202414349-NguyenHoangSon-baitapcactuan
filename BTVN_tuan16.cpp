@@ -25,3 +25,12 @@ struct Graph
     int totalNodes;
     int matrix[MAX_NODES][MAX_NODES];
 };
+// cau hinh do thi
+void taoDoThi(Graph &soDo, int soLuongDinh)
+{
+    soDo.totalNodes = soLuongDinh;
+
+    for(int i = 0; i < soLuongDinh; i++)
+        for(int j = 0; j < soLuongDinh; j++)
+            soDo.matrix[i][j] = 0;
+}
