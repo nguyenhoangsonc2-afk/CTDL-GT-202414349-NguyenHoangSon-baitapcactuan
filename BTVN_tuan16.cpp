@@ -63,3 +63,33 @@ void hienThiBang(int bangSo[MAX_NODES][MAX_NODES], int kichThuoc)
         cout << endl;
     }
 }
+// Thuật toán Warshall kiểm tra khả năng thông suốt giữa các tỉnh
+void chayWarshall(Graph soDo, int ketQuaLienThong[MAX_NODES][MAX_NODES])
+{
+    int total = soDo.totalNodes;
+
+    for(int i = 0; i < total; i++)
+    {
+        for(int j = 0; j < total; j++)
+        {
+            if(i == j)
+                ketQuaLienThong[i][j] = 1;
+            else if(soDo.matrix[i][j] != 0)
+                ketQuaLienThong[i][j] = 1;
+            else
+                ketQuaLienThong[i][j] = 0;
+        }
+    }
+
+    for(int k = 0; k < total; k++)
+    {
+        for(int i = 0; i < total; i++)
+        {
+            for(int j = 0; j < total; j++)
+            {
+                if(ketQuaLienThong[i][j] == 0)
+                    ketQuaLienThong[i][j] = ketQuaLienThong[i][k] && ketQuaLienThong[k][j];
+            }
+        }
+    }
+}
