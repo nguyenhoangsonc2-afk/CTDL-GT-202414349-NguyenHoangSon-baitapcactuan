@@ -134,3 +134,16 @@ void chayDijkstra(Graph soDo, int diemDau, int tuyenNganNhat[MAX_NODES], int vet
         }
     }
 }
+// Hàm đệ quy xuất lộ trình di chuyển ra màn hình
+void inLoTrinh(int diemCuoi, int vetDuongDi[])
+{
+    if(diemCuoi == -1)
+        return;
+
+    inLoTrinh(vetDuongDi[diemCuoi], vetDuongDi);
+
+    if(vetDuongDi[diemCuoi] != -1)
+        cout << " -> ";
+
+    cout << danhSachTinh[diemCuoi];
+}
