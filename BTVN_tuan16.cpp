@@ -20,3 +20,8 @@ string danhSachTinh[MAX_NODES] =
     "Hoa Binh",
     "Son Tay"
 };
+struct Graph
+{
+    int totalNodes;
+    int matrix[MAX_NODES][MAX_NODES];
+};
