@@ -1,5 +1,22 @@
-### TUẦN 15
-## ĐỀ BÀI :
+## TUẦN 16
+
+### ĐỀ BÀI: Cài đặt thuật toán tìm đường đi và tìm đường đi ngắn nhất cho đồ thị các tỉnh thành tuần 15.
+
+* Thuật toán Warshall: Để kiểm tra tính liên thông (liệu giữa 2 tỉnh bất kỳ có tồn tại đường đi hay không).
+
+* Thuật toán Dijkstra: Để tìm ra đường đi ngắn nhất từ một tỉnh nguồn đến các tỉnh còn lại.
+* 
+ #### Bước 1: Khởi tạo cấu trúc dữ liệu: Định nghĩa đồ thị bằng ma trận kề matrix[][] kích thước $11 \times 11$. Toàn bộ trọng số ban đầu được gán bằng 0 (biểu thị chưa có đường nối).
+ #### Bước 2: Xây dựng đồ thị : Đọc danh sách các tuyến đường (các cạnh) từ mảng dataTuyenDuong và điền trọng số tương ứng vào ma trận kề. Vì đây là đồ thị vô hướng nên nếu có đường giữa A và B, ta gán cả matrix[A][B] và matrix[B][A].
+#### Bước 3: Thực hiện thuật toán Warshall: Tìm ma trận bao đóng chuyển tiếp để kiểm tra xem Hà Nội có thể đi đến Uông Bí được không.
+ #### Bước 4: Thực hiện thuật toán Dijkstra: Tìm lộ trình ngắn nhất chính xác từ Hà Nội tới Uông Bí, sau đó dùng kỹ thuật truy vết (đệ quy) để in ra danh sách các tỉnh phải đi qua.
+
+
+
+
+
+## TUẦN 15
+### ĐỀ BÀI :
 Cài đặt bài đồ thị giao thông, theo 2 cấu trúc lưu trữ mảng đỉnh kề và danh sách liên két, duyệt theo chiều rộng (BFS) và in theo thứ tự duyệt từ đỉnh Hà nội.
 * Cài đặt thuật toán duyệt đồ thị theo chiều rộng dựa trên sơ đồ mạng lưới giao thông gồm 11 đỉnh (tương ứng với 11 tỉnh/thành phố phía Bắc) bằng hai cấu trúc lưu trữ dữ liệu khác nhau: Ma trận kề và Danh sách liên kết.
 * 1. Ý Tưởng: Đỉnh nào có khoảng cách (số cạnh) gần đỉnh gốc hơn sẽ được ưu tiên thăm trước. Để kiểm soát thứ tự duyệt, thuật toán sử dụng cấu trúc dữ liệu Hàng đợi (Queue).
@@ -19,9 +36,9 @@ Cài đặt cây cân bằng AVL với đầu vào là dãy số sau , thực hi
 4. In cây.
 
   
-### TUẦN 13
+## TUẦN 13
 
-## ĐỀ BÀI: 
+### ĐỀ BÀI: 
 * Cài đặt cây NP tìm kiếm của bài toán dưới đây , tính độ phức tạp thuật toán của thuật toán tìm kiếm trên cây NP tìm kiếm.
 ## Độ phức tạp: Độ phức tạp tìm kiếm trên Cây nhị phân tìm kiếm (BST) không cố định mà phụ thuộc hoàn toàn vào hình dạng (chiều cao) của cây:
 *Trường hợp trung bình / tốt nhất:*
@@ -30,21 +47,22 @@ Cài đặt cây cân bằng AVL với đầu vào là dãy số sau , thực hi
 *Trường hợp xấu nhất:*
  $O(n)$, Điều kiện: Khi mảng dữ liệu đầu vào có thứ tự (tăng dần hoặc giảm dần), cây dựng lên sẽ bị suy biến lệch hoàn toàn về một phía (như một danh sách liên kết). Chiều cao cây lúc này bằng chính số phần tử $n$.
 
-### TUẦN 12:
-## ĐỀ BÀI: Cài đặt giải thuật sắp xếp vun đống cho các cây ví dụ trong slide và trên bảng, in ra từng trạng thái lưu trữ cho mỗi bước vun đống và sắp xếp.
-### TUẦN 11: 
-## ĐỀ BÀI: 
+## TUẦN 12:
+### ĐỀ BÀI: Cài đặt giải thuật sắp xếp vun đống cho các cây ví dụ trong slide và trên bảng, in ra từng trạng thái lưu trữ cho mỗi bước vun đống và sắp xếp.
+
+## TUẦN 11: 
+### ĐỀ BÀI: 
 * Cài đặt cây đầy đủ, cây lệch trái, cây lệch phải, cây zigzac cho trên bảng theo 2 cấu trúc lưu trữ: tuần tự và móc nối.
 * Cài đặt cây biểu thức và in biểu thức theo thứ tự duyệt trước, sau, giữa.
 
-### TUẦN 9
-## I. Bài cơ bản( quản lý dssv)  
+## TUẦN 9
+### I. Bài cơ bản( quản lý dssv)  
 **Các Test case:**  
 * DS sinh viên rỗng, in ra rỗng.   
 * DS sinh viên không rỗng, không có svien trùng ngày tháng năm sinh, in ra danh sách.   
 * DS sinh viên không rỗng, có sinh viên trùng ngày tháng năm sinh, xóa sinh viên, in lại danh sách sinh viên.   
 * Thêm một sinh viên mới vào danh sách ListSV đã sắp xếp và SV được sắp xếp theo đúng thứ tự ở DS mới( tích hợp chung với case3)
-## II. Bài nâng cao(Bài toán Josephus)
+### II. Bài nâng cao(Bài toán Josephus)
 
 ### 1. Thiết kế giải thuật
 * **Cấu trúc dữ liệu:** Sử dụng cấu trúc liên kết vòng, mỗi nút gồm STT người chơi và link (trỏ đến người kế tiếp).
@@ -76,8 +94,8 @@ Cài đặt cây cân bằng AVL với đầu vào là dãy số sau , thực hi
 
 
 
-### TUẦN 6
-## I. Phân tích sơ bộ bài toán
+## TUẦN 6
+### I. Phân tích sơ bộ bài toán
 1. Mô tả bài toán
 Cần quản lý các file trong thư mục bằng danh sách liên kết đơn, trong đó:
 -Mỗi file có: tên (name), thời gian (timestamp), kích thước (size).
@@ -89,7 +107,7 @@ Các thao tác:
 2. Lý do chọn danh sách liên kết đơn
 -Dễ chèn đúng vị trí (không cần dịch phần tử như mảng).
 -Phù hợp với dữ liệu thay đổi liên tục (thêm/xóa file).
-## II. Mô tả cấu trúc dữ liệu
+### II. Mô tả cấu trúc dữ liệu
 1. Cấu trúc File
 struct File {
     string name;
@@ -106,7 +124,7 @@ struct Node {
 3. Danh sách
 -Con trỏ đầu: Node* head 
 -Ban đầu: head = NULL 
- ## III. Mô tả các hàm cần thực hiện
+ ### III. Mô tả các hàm cần thực hiện
 1. Tạo node
 -Input: File 
 -Output: Node mới 
@@ -125,7 +143,7 @@ struct Node {
 -xóa node đó.
 5. Tối ưu dung lượng (≤ 32GB)
 •	Lặp: nếu tổng > 32 → xóa file nhỏ nhất 
-## IV. Phân tích giải thuật chi tiết
+### IV. Phân tích giải thuật chi tiết
 1. Chèn có thứ tự
 -Nếu danh sách rỗng thì chèn đầu.
 -Nếu nhỏ hơn head thì chèn đầu .
