@@ -1,3 +1,21 @@
+## TUẦN 18
+
+### ĐỀ BÀI: Cài đặt thuật toán tìm đường đi ngắn nhất Dijkstra và cây khung PRIM , KRUSKAL cho bài toán đồ thị giao thông , in cây khung (ma trận đỉnh kề ), "THUẬT TOÁN DIJKSTRA ĐÃ LÀM Ở TUẦN 16".
+
+* Sử dụng cấu trúc Ma trận kề (Adjacency Matrix) thông qua mảng hai chiều maTranKe[MAX_TINH][MAX_TINH] nằm trong cấu trúc DoThiGiaoThong.
+* Đỉnh: Đại diện cho 11 tỉnh thành, (từ $0$ đến $10$) thông qua mảng hằng TEN_TINH:
+0: HN, 1: TN, 2: BN, 3: BG, 4: UB, 5: HP, 6: HD, 7: HY, 8: PL, 9: HB, 10: ST.
+* Cạnh: Đại diện cho các tuyến đường nối giữa các tỉnh. Trọng số của cạnh (trongSo) chính là khoảng cách.
+
+#### Thuật toán Prim xây dựng cây khung nhỏ nhất bằng cách phát triển dần một cây từ một đỉnh xuất phát ban đầu (trong bài là đỉnh Hòa Bình - HB). 
+Tại mỗi bước, thuật toán sẽ tìm một cạnh ngắn nhất kết nối một đỉnh đã nằm trong cây với một đỉnh chưa nằm trong cây để kết nạp đỉnh mới đó vào cây.
+
+
+#### Kruskal tiếp cận theo hướng chọn cạnh. Thuật toán xem mỗi đỉnh ban đầu là một cây độc lập.
+Sau đó, nó duyệt qua tất cả các cạnh của đồ thị theo thứ tự trọng số tăng dần và nhặt các cạnh này vào cây khung, miễn là cạnh được chọn không tạo thành chu trình (vòng khép kín).
+
+
+
 ## TUẦN 16
 
 ### ĐỀ BÀI: Cài đặt thuật toán tìm đường đi và tìm đường đi ngắn nhất cho đồ thị các tỉnh thành tuần 15.
@@ -5,7 +23,7 @@
 * Thuật toán Warshall: Để kiểm tra tính liên thông (liệu giữa 2 tỉnh bất kỳ có tồn tại đường đi hay không).
 
 * Thuật toán Dijkstra: Để tìm ra đường đi ngắn nhất từ một tỉnh nguồn đến các tỉnh còn lại.
-* 
+  
  #### Bước 1: Khởi tạo cấu trúc dữ liệu: Định nghĩa đồ thị bằng ma trận kề matrix[][] kích thước $11 \times 11$. Toàn bộ trọng số ban đầu được gán bằng 0 (biểu thị chưa có đường nối).
  #### Bước 2: Xây dựng đồ thị : Đọc danh sách các tuyến đường (các cạnh) từ mảng dataTuyenDuong và điền trọng số tương ứng vào ma trận kề. Vì đây là đồ thị vô hướng nên nếu có đường giữa A và B, ta gán cả matrix[A][B] và matrix[B][A].
 #### Bước 3: Thực hiện thuật toán Warshall: Tìm ma trận bao đóng chuyển tiếp để kiểm tra xem Hà Nội có thể đi đến Uông Bí được không.
