@@ -57,6 +57,7 @@ void giaiThuatPrim(DoThiGiaoThong &dt) {
     cout << "THUAT TOAN PRIM (Khoi hanh tu tinh Hoa Binh):\n";
     for (int luotQuet = 0; luotQuet < n - 1; luotQuet++) { 
         int trongSoMin = VO_CUNG;
+        
         int dinhU = -1, dinhV = -1;  
 
         for (int i = 0; i < n; i++) {
@@ -86,6 +87,7 @@ void giaiThuatPrim(DoThiGiaoThong &dt) {
     hienThiMaTran(maTranCayKhung, n);
 }
 //THUẬT TOÁN KRUSKAL
+
 // Hàm tìm gốc
 int timGocTapHop(int tapCha[], int i) {
     return (tapCha[i] == -1) ? i : timGocTapHop(tapCha, tapCha[i]);  
@@ -108,7 +110,7 @@ void giaiThuatKruskal(DoThiGiaoThong &dt) {
         }
     }
 
-    // Sắp xếp danh sách các cạnh tăng dần theo trọng số
+    // Sắp xếp danh sách các cạnh tăng dần theo trọng sốo
     for (int i = 0; i < tongSoCanh - 1; i++) {   
         for (int j = i + 1; j < tongSoCanh; j++) {
             if (danhSachCanh[i].ts > danhSachCanh[j].ts) {
@@ -132,7 +134,7 @@ void giaiThuatKruskal(DoThiGiaoThong &dt) {
         int gocU = timGocTapHop(tapCha, danhSachCanh[i].u);
         int gocV = timGocTapHop(tapCha, danhSachCanh[i].v);
 
-        // Nếu hai đỉnh không cùng gốc thì không tạo thành chu trình
+        // Nếu hai đỉnh không cùng gốc thì không tạo
         if (gocU != gocV) {  
             cout << "-> Them tuyen: " << TEN_TINH[danhSachCanh[i].u] << " - " << TEN_TINH[danhSachCanh[i].v] << " (" << danhSachCanh[i].ts << ")\n"; 
             
@@ -167,7 +169,7 @@ int main() {
     }
     
     cout <<" MA TRAN DO THI BAN DAU" << endl; 
-    
+
     hienThiMaTran(doThi.maTranKe, n);
 
 
