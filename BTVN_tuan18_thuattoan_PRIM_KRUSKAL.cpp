@@ -53,7 +53,7 @@ void giaiThuatPrim(DoThiGiaoThong &dt) {
     // lưu trữ riêng cho cây khung thu được
     int maTranCayKhung[MAX_TINH][MAX_TINH] = {0}; 
 
-    cout << "\n==================================================\n";
+   
     cout << "THUAT TOAN PRIM (Khoi hanh tu tinh Hoa Binh):\n";
     for (int luotQuet = 0; luotQuet < n - 1; luotQuet++) { 
         int trongSoMin = VO_CUNG;
@@ -117,7 +117,7 @@ void giaiThuatKruskal(DoThiGiaoThong &dt) {
         }
     }
 
-    cout << "\n==================================================\n";
+    
     cout << "THUAT TOAN KRUSKAL - Danh sach canh sau khi sap xep:\n"; 
     for (int i = 0; i < tongSoCanh; i++) {
         cout << TEN_TINH[danhSachCanh[i].u] << "-" << TEN_TINH[danhSachCanh[i].v] << ":" << danhSachCanh[i].ts << ((i < tongSoCanh - 1) ? ", " : "\n\n");
@@ -166,7 +166,7 @@ int main() {
         themTuyenDuong(doThi, cacTuyenGiaoThong[i][0], cacTuyenGiaoThong[i][1], cacTuyenGiaoThong[i][2]);
     }
     
-    cout << "               MA TRAN DO THI BAN DAU" << endl; 
+    cout <<" MA TRAN DO THI BAN DAU" << endl; 
     hienThiMaTran(doThi.maTranKe, n);
 
     //tính toán và in kết quả ma trận kề cây khung
