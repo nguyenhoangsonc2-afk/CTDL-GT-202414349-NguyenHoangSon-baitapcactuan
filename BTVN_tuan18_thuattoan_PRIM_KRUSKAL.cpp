@@ -85,3 +85,40 @@ void giaiThuatPrim(DoThiGiaoThong &dt) {
     cout << "\nMA TRAN DINH KE CAY KHUNG MIN (PHUONG PHAP PRIM):\n";
     hienThiMaTran(maTranCayKhung, n);
 }
+//THUẬT TOÁN KRUSKAL
+// Hàm tìm gốc
+int timGocTapHop(int tapCha[], int i) {
+    return (tapCha[i] == -1) ? i : timGocTapHop(tapCha, tapCha[i]);  
+}
+
+void giaiThuatKruskal(DoThiGiaoThong &dt) {
+    int n = dt.soDinh;
+    int tongSoCanh = 0;
+    TuyenDuong danhSachCanh[100]; 
+    
+    int maTranCayKhung[MAX_TINH][MAX_TINH] = {0}; 
+
+    // Trích xuất các cạnh
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) { 
+            if (dt.maTranKe[i][j] > 0) {   
+                danhSachCanh[tongSoCanh] = {i, j, dt.maTranKe[i][j]}; 
+                tongSoCanh++;    
+            } 
+        }
+    }
+
+    // Sắp xếp danh sách các cạnh tăng dần theo trọng số
+    for (int i = 0; i < tongSoCanh - 1; i++) {   
+        for (int j = i + 1; j < tongSoCanh; j++) {
+            if (danhSachCanh[i].ts > danhSachCanh[j].ts) {
+                swap(danhSachCanh[i], danhSachCanh[j]);  
+            }
+        }
+    }
+
+    cout << "\n==================================================\n";
+    cout << "THUAT TOAN KRUSKAL - Danh sach canh sau khi sap xep:\n"; 
+    for (int i = 0; i < tongSoCanh; i++) {
+        cout << TEN_TINH[danhSachCanh[i].u] << "-" << TEN_TINH[danhSachCanh[i].v] << ":" << danhSachCanh[i].ts << ((i < tongSoCanh - 1) ? ", " : "\n\n");
+    }
