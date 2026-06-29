@@ -25,3 +25,7 @@ void themTuyenDuong(DoThiGiaoThong &dt, int u, int v, int trongSo) {
     dt.maTranKe[u][v] = trongSo;  
     dt.maTranKe[v][u] = trongSo; 
 }
+//một cạnh (tuyến đường) trong đồ thị
+struct TuyenDuong { 
+    int u, v, ts; 
+};
