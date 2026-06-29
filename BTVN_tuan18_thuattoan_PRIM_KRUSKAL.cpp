@@ -149,3 +149,29 @@ void giaiThuatKruskal(DoThiGiaoThong &dt) {
     cout << "\nMA TRAN DINH KE CAY KHUNG MIN (PHUONG PHAP KRUSKAL):\n";
     hienThiMaTran(maTranCayKhung, n);
 }
+int main() {
+    int n = MAX_TINH;
+    DoThiGiaoThong doThi; 
+    khoiTaoDoThi(doThi, n);
+    
+    //từ slide bài tập
+    int cacTuyenGiaoThong[][3] = { 
+        {0, 6, 1}, {6, 7, 2}, {8, 7, 3}, {0, 8, 4}, {0, 9, 5},    
+        {0, 10, 6},{0, 1, 7}, {0, 2, 8}, {2, 3, 9}, {3, 4, 10}, 
+        {2, 4, 11}, {4, 5, 12}, {6, 5, 13}   
+    };
+    int soLuongTuyen = sizeof(cacTuyenGiaoThong) / sizeof(cacTuyenGiaoThong[0]);
+    
+    for(int i = 0; i < soLuongTuyen; i++) { 
+        themTuyenDuong(doThi, cacTuyenGiaoThong[i][0], cacTuyenGiaoThong[i][1], cacTuyenGiaoThong[i][2]);
+    }
+    
+    cout << "               MA TRAN DO THI BAN DAU" << endl; 
+    hienThiMaTran(doThi.maTranKe, n);
+
+    //tính toán và in kết quả ma trận kề cây khung
+    giaiThuatPrim(doThi);
+    giaiThuatKruskal(doThi);
+    
+    return 0;
+}
