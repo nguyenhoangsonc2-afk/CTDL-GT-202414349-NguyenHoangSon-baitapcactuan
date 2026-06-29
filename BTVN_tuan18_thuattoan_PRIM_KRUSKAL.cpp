@@ -55,3 +55,30 @@ void giaiThuatPrim(DoThiGiaoThong &dt) {
 
     cout << "\n==================================================\n";
     cout << "THUAT TOAN PRIM (Khoi hanh tu tinh Hoa Binh):\n";
+    for (int luotQuet = 0; luotQuet < n - 1; luotQuet++) { 
+        int trongSoMin = VO_CUNG;
+        int dinhU = -1, dinhV = -1;  
+
+        for (int i = 0; i < n; i++) {
+            if (daKetNap[i]) {   
+                for (int j = 0; j < n; j++) {  
+                    if (!daKetNap[j] && dt.maTranKe[i][j] > 0 && dt.maTranKe[i][j] < trongSoMin) { 
+                        trongSoMin = dt.maTranKe[i][j];    
+                        dinhU = i;
+                        dinhV = j; 
+                    }  
+                } 
+            }
+        }
+         
+        if (dinhU != -1 && dinhV != -1) { 
+            cout << "-> Chon tuyen: " << TEN_TINH[dinhU] << " - " << TEN_TINH[dinhV] << " (" << trongSoMin << ")\n";
+            daKetNap[dinhV] = true;     
+            
+            // Cập nhật vào ma trận kề của cây khung
+            maTranCayKhung[dinhU][dinhV] = trongSoMin; 
+            maTranCayKhung[dinhV][dinhU] = trongSoMin;
+        } else {
+            break;  
+        }
+    }
