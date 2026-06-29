@@ -82,3 +82,6 @@ void giaiThuatPrim(DoThiGiaoThong &dt) {
             break;  
         }
     }
+    cout << "\nMA TRAN DINH KE CAY KHUNG MIN (PHUONG PHAP PRIM):\n";
+    hienThiMaTran(maTranCayKhung, n);
+}
