@@ -167,7 +167,9 @@ int main() {
     }
     
     cout <<" MA TRAN DO THI BAN DAU" << endl; 
+    
     hienThiMaTran(doThi.maTranKe, n);
+
 
     //tính toán và in kết quả ma trận kề cây khung
     giaiThuatPrim(doThi);
