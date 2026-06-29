@@ -20,3 +20,8 @@ void khoiTaoDoThi(DoThiGiaoThong &dt, int n) {
         }
     }
 }
+// Thêm đường đi hai chiều giữa hai tỉnh
+void themTuyenDuong(DoThiGiaoThong &dt, int u, int v, int trongSo) {
+    dt.maTranKe[u][v] = trongSo;  
+    dt.maTranKe[v][u] = trongSo; 
+}
