@@ -122,3 +122,30 @@ void giaiThuatKruskal(DoThiGiaoThong &dt) {
     for (int i = 0; i < tongSoCanh; i++) {
         cout << TEN_TINH[danhSachCanh[i].u] << "-" << TEN_TINH[danhSachCanh[i].v] << ":" << danhSachCanh[i].ts << ((i < tongSoCanh - 1) ? ", " : "\n\n");
     }
+    int tapCha[MAX_TINH];
+    for (int i = 0; i < n; i++) {
+        tapCha[i] = -1; 
+    }
+
+    cout << "Cac buoc phat trien cay khung:\n";
+    for (int i = 0; i < tongSoCanh; i++) {
+        int gocU = timGocTapHop(tapCha, danhSachCanh[i].u);
+        int gocV = timGocTapHop(tapCha, danhSachCanh[i].v);
+
+        // Nếu hai đỉnh không cùng gốc thì không tạo thành chu trình
+        if (gocU != gocV) {  
+            cout << "-> Them tuyen: " << TEN_TINH[danhSachCanh[i].u] << " - " << TEN_TINH[danhSachCanh[i].v] << " (" << danhSachCanh[i].ts << ")\n"; 
+            
+            // nhận cạnh này vào ma trận kề cây khung
+            maTranCayKhung[danhSachCanh[i].u][danhSachCanh[i].v] = danhSachCanh[i].ts; 
+            maTranCayKhung[danhSachCanh[i].v][danhSachCanh[i].u] = danhSachCanh[i].ts;
+            
+            // Hợp nhấtt 2 tập hợp lại với nhau
+            tapCha[gocU] = gocV;            
+        } 
+    }
+
+    // In ma trận 
+    cout << "\nMA TRAN DINH KE CAY KHUNG MIN (PHUONG PHAP KRUSKAL):\n";
+    hienThiMaTran(maTranCayKhung, n);
+}
