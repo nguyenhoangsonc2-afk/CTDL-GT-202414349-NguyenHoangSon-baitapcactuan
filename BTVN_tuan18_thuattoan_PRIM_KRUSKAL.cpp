@@ -29,3 +29,18 @@ void themTuyenDuong(DoThiGiaoThong &dt, int u, int v, int trongSo) {
 struct TuyenDuong { 
     int u, v, ts; 
 };
+// in ma trận
+void hienThiMaTran(int matrix[MAX_TINH][MAX_TINH], int n) {
+    cout << setw(6) << " ";
+    for (int j = 0; j < n; j++) { 
+        cout << setw(5) << TEN_TINH[j]; 
+    }
+    cout << endl;
+    for (int i = 0; i < n; i++) {
+        cout << setw(6) << TEN_TINH[i];
+        for (int j = 0; j < n; j++) {
+            cout << setw(5) << matrix[i][j];
+        }
+        cout << endl;
+    }  
+}
