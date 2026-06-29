@@ -11,3 +11,12 @@ struct DoThiGiaoThong {
     int soDinh;
     int maTranKe[MAX_TINH][MAX_TINH];
 };
+// Khởi tạo ma trận
+void khoiTaoDoThi(DoThiGiaoThong &dt, int n) { 
+    dt.soDinh = n;
+    for (int i = 0; i < n; i++) {     
+        for (int j = 0; j < n; j++) {
+            dt.maTranKe[i][j] = 0; 
+        }
+    }
+}
