@@ -44,3 +44,14 @@ void hienThiMaTran(int matrix[MAX_TINH][MAX_TINH], int n) {
         cout << endl;
     }  
 }
+// THUẬT TOÁN PRIM 
+void giaiThuatPrim(DoThiGiaoThong &dt) {
+    int n = dt.soDinh;
+    bool daKetNap[MAX_TINH] = {false};  
+    daKetNap[9] = true;  // Bắt đầu (HB có index là 9)
+
+    // lưu trữ riêng cho cây khung thu được
+    int maTranCayKhung[MAX_TINH][MAX_TINH] = {0}; 
+
+    cout << "\n==================================================\n";
+    cout << "THUAT TOAN PRIM (Khoi hanh tu tinh Hoa Binh):\n";
